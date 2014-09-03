@@ -1,6 +1,5 @@
 var express = require('express')
   , app = module.exports = express()
-  , formidable = require('formidable')
   , pg = require('pg');
 
 app.set('port', (process.env.PORT || 5000));
@@ -15,11 +14,9 @@ app.get("/", function(request, response) {
 })
 
 app.post('/trips', function(req, res) {
-	var form = new formidable.IncomingForm();
-	form.parse(req, function(err, fields, files) {
-	  console.log(fields);
-	  res.writeHead(200, {'content-type': 'text/plain'});
-	  res.end('Message Received. Thanks!\r\n');
+	parsedBody = JSON.parse(request.body)
+  res.writeHead(200, {'content-type': 'text/plain'});
+  res.end(request.body);
 	})
 })
 
@@ -28,7 +25,7 @@ app.get('/db', function(request, response) {
   	if (err) {
 	  	console.log(err)	
   	}
-  	client.query('SELECT * FROM test_table', function(err, result) {
+  	client.query('SELECT * FROM messages', function(err, result) {
       done();
       if (err)
        { console.error(err); response.send("Error " + err); }
