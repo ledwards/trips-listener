@@ -1,0 +1,7 @@
+{
+  "name": "Trips Listener",
+  "description": "A listener for incoming Trips emails",
+  "repository": "https://github.com/ledwards/trips-listener",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express"]
+}

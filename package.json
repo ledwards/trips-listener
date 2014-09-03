@@ -1,0 +1,25 @@
+{
+  "name": "trips-listener",
+  "version": "0.1.0",
+  "description": "A listener for incoming Trips emails",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "~3.4.x"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ledwards/trips-listener"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "author": "Lee Edwards"
+}
